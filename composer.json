@@ -1,0 +1,32 @@
+{
+	"name": "nbochenko/zf-profiler",
+	"description": "Zend Framework 2 profiler",
+    "type": "library",
+	"license": "",
+    "authors": [
+        {
+            "name": "Nicolas Bochenko",
+            "email": "nbochenko@gmail.com",
+            "role": "PHP Architect"
+        },
+        {
+            "name": "Vincent Blanchon",
+            "email": "boby@champion.fr",
+            "role": "PHP Architect"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "ZfProfiler\\": "src/"
+        }
+    },
+	"keywords": [
+		"zf-profiler"
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=5.4.0",
+        "zendframework/zendframework": "2.*"
+	}
+}
