@@ -2,21 +2,11 @@
 
 namespace ZfProfiler\Mvc\Service;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use ZfProfiler\Profiler\ProfilerManager;
+use Zend\Mvc\Service\AbstractPluginManagerFactory;
 
-class ProfilerManagerFactory implements FactoryInterface
+class ProfilerManagerFactory extends AbstractPluginManagerFactory
 {
 
-    /**
-     * @inheritdoc
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
-    {
-        $profilerManager = new ProfilerManager();
-        $profilerManager->setServiceLocator($serviceLocator);
+    const PLUGIN_MANAGER_CLASS = 'ZfProfiler\Profiler\ProfilerManager';
 
-        return $profilerManager;
-    }
 }

@@ -3,6 +3,7 @@
 namespace ZfProfiler;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ControllerProviderInterface;
 use Zend\ModuleManager\Feature\RouteProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
@@ -13,8 +14,14 @@ class Module implements
     ControllerProviderInterface,
     RouteProviderInterface,
     AutoloaderProviderInterface,
-    ProfilerProviderInterface
+    ProfilerProviderInterface,
+    ConfigProviderInterface
 {
+
+    public function getConfig()
+    {
+        return include __DIR__ . '/config/module.config.php';
+    }
 
     /**
      * @inheritdoc
